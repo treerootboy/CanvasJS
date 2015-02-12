@@ -3,6 +3,23 @@
 Maintained and developed by Helfull
 This package is a helper library for laravel to easyly create [canvasjs charts](http://canvasjs.com).
 
+## Installation
+
+add require:
+
+``` php
+    'helfull/canvasjs': 'dev-master'
+```  
+
+run `composer update` or `composer install`  
+  
+add to your `config/app.php`
+
+``` php
+    'Helfull\CanvasJS\Laravel\CanvasJSServiceProvider',
+```
+
+
 ## Usage
 
 ``` php
