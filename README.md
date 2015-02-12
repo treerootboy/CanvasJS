@@ -5,7 +5,7 @@ This package is a helper library for laravel to easyly create [canvasjs charts](
 
 ## Usage
 
-...php
+... php
     $chart = new Chart(['id'=>'test']);
     $data = new ChartData;
     $data
@@ -18,6 +18,6 @@ This package is a helper library for laravel to easyly create [canvasjs charts](
 ...
 
 In your view you just do
-...php
+... php
     {{ $chart->render }}
 ...
