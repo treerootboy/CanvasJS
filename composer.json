@@ -1,5 +1,5 @@
 {
-    "name": "helfull/laravel-canvasjs",
+    "name": "helfull/canvasjs",
     "description": "Helper library to create CanvasJS[http://canvasjs.com/] Charts. ",
     "keywords": ["laravel","canvasjs"],
     "license": "MIT",
