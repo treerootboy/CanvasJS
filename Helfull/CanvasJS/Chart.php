@@ -3,14 +3,10 @@
 namespace Helfull\CanvasJS;
 
 use Helfull\CanvasJS\Chart\ChartData;
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
 use View;
 
-class Chart extends Collection implements Renderable {
-
-	protected $id = 'chart';
-	protected $options = [];
+class Chart extends Collection {
 
 	public function __construct($opt = []) {
 		$options['chart'] = $opt;
@@ -19,10 +15,7 @@ class Chart extends Collection implements Renderable {
 	}
 
 	public function addData(ChartData $chartData) {
-		$data = $this->getData();
-		array_push($data, $chartData);
-		$this->setData($data);
-		return $this;
+		return $this->getData()->push($chartData);
 	}
 
 	public function getData() {
@@ -33,15 +26,25 @@ class Chart extends Collection implements Renderable {
 		$this->put('data', $data);
 	}
 
+	public function getID() {
+		return $this->get('id');
+	}
+
+	public function putAttribute(array $att) {
+		return $this->getAttributes()->push($att);
+	}
+
+	public function getAttributes() {
+		return $this->get('attributes');
+	}
+
 	public function getChart() {
 		return json_encode($this->get('chart'));
 	}
 
 	protected function resolveID() {
 		if (!$this->has('id')) {
-			$this->id = $this->generateID();
-		} else {
-			$this->id = $this->pull('id');
+			$this->put('id', $this->generateID());
 		}
 	}
 
@@ -59,11 +62,10 @@ class Chart extends Collection implements Renderable {
 		return $this->toJson();
 	}
 
-	public function render($jquery = false) {
-		$chart = $this;
+	public function render() {
 
-		$view = $jquery ? 'chartjquery' : 'chart';
+		$view = false ? 'chartjquery' : 'chart';
 
-		return View::make('canvasjs::' . $view, ['chart' => $this]);
+		return view('canvasjs::' . $view, ['chart' => $this]);
 	}
 }

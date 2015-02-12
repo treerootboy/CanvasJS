@@ -6,7 +6,8 @@
     "type": "library",
 
     "require": {
-        "illuminate/support": "5.*"
+        "illuminate/support": "5.*",
+        "illuminate/html": "5.*"
     },
 
     "autoload": {

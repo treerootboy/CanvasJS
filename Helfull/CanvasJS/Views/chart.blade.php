@@ -1,6 +1,7 @@
+<div id="{!!$chart->getID()!!}" {!! HTML::attributes($chart->getAttributes()) !!}></div>
 <script type="text/javascript">
-  window.onload = function () {
-    var {{$chart->id}} = new CanvasJS.Chart("{{$chart->id}}",{{{$chart->getChart()}}});
+	window.onload = function () {
+		var {!!$chart->getID()!!} = new CanvasJS.Chart("{!!$chart->getID()!!}",{!!$chart->getChart()!!});
+		{!!$chart->getID()!!}.render();
+	}
 </script>
-
-<div id="{{$chart->id}}" style="height: 300px; width: 100%;"></div>
