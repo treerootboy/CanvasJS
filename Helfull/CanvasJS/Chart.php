@@ -3,10 +3,12 @@
 namespace Helfull\CanvasJS;
 
 use Illuminate\Support\Collection;
+use Illuminate\Contracts\Support\Renderable;
 use Helfull\CanvasJS\Chart\DataPoint;
 use Helfull\CanvasJS\Chart\ChartData;
+use View;
 
-class Chart extends Collection {
+class Chart extends Collection implements Renderable{
 
     protected $id = 'chart';
     protected $options = [];
@@ -31,6 +33,10 @@ class Chart extends Collection {
         $this->put('data', $data);
     }
 
+    public function getChart() {
+        return $this->get('chart');
+    }
+
     protected function resolveID() {
         if(!$this->has('id')) {
             $this->id = $this->generateID();
@@ -49,4 +55,13 @@ class Chart extends Collection {
         return $arr;
     }
 
+    public function toString() {
+        return $this->toJson();
+    }
+
+    public function render($jquery=false) {
+        $chart = $this;
+        $view = $jquery ? View::make('canvasjs::chartjquery') : View::make('canvasjs::chart');
+        return $view->with(compact('chart'));
+    }
 }

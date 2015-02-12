@@ -19,5 +19,5 @@ This package is a helper library for laravel to easyly create [canvasjs charts](
 
 In your view you just do
 ``` php
-    {{ $chart->render }}
+    {{ $chart->render() }}
 ```
