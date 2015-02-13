@@ -24,7 +24,7 @@ add require:
 
 run `composer update` or `composer install`  
   
-add to your `config/app.php`
+add to your `config/app.php ['providers']`
 ``` php
     'Helfull\CanvasJS\Laravel\CanvasJSServiceProvider',
     'Illuminate\Html\HtmlServiceProvider',
