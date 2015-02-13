@@ -1,6 +1,10 @@
 # CanvasJS
 
 [![Build Status](https://travis-ci.org/Helfull/CanvasJS.svg?branch=develop)](http://travis-ci.org/Helfull/CanvasJS?branch=develop)
+[![Latest Stable Version](https://poser.pugx.org/helfull/canvasjs/v/stable.svg)](https://packagist.org/packages/helfull/canvasjs) 
+[![Monthly Downloads](https://poser.pugx.org/helfull/canvasjs/d/monthly.png)](https://packagist.org/packages/helfull/canvasjs)
+[![Latest Unstable Version](https://poser.pugx.org/helfull/canvasjs/v/unstable.svg)](https://packagist.org/packages/helfull/canvasjs) 
+[![License](https://poser.pugx.org/helfull/canvasjs/license.svg)](https://packagist.org/packages/helfull/canvasjs)
 
 Maintained and developed by Helfull
 This package is a helper library for laravel to easyly create [canvasjs charts](http://canvasjs.com).
