@@ -20,6 +20,7 @@ class ChartData extends Collection {
 
 	public function setType($chartType) {
 		$this->put('type', $chartType);
+		return $this;
 	}
 
 	public function getPoints() {
