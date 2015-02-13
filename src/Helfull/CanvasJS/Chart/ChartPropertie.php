@@ -18,10 +18,8 @@ class ChartPropertie extends Collection {
 	protected function resolveData() {
 		if ($this->has('data')) {
 			$this->put('data', 
-				new Collection(
-					with(new ChartDataParser)
-					->parse($this->pull('data', []))
-				)
+				with(new ChartDataParser)
+				->parse($this->pull('data', []))
 			);
 		}
 	}

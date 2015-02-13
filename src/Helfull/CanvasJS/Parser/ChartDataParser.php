@@ -16,7 +16,7 @@ class ChartDataParser extends Parser {
 			$parsedData[] = new ChartData($entry);
 		}
 
-		return $parsedData;
+		return new Collection($parsedData);
 	}
 
 }
