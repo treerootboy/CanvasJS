@@ -20,6 +20,7 @@ class Chart extends Collection {
 	}
 
 	public function addData(ChartData $chartData) {
+		dd($this);
 		$this->getPropertie('data')->push($chartData);
 		return $this;
 	}
