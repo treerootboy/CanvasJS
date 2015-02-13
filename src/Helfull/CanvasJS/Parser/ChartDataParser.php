@@ -2,7 +2,7 @@
 namespace Helfull\CanvasJS\Parser;
 
 use Helfull\CanvasJS\Chart\ChartData;
-
+use Illuminate\Support\Collection;
 /**
  * Parses ChartData array into ChartData objects
  */
