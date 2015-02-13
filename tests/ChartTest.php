@@ -45,4 +45,33 @@ class ChartTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($attributes['class'], $chart->getAttribute('class'));
     }
 
+    function testShouldSupportJSON() {
+        $json = '
+        {"id": "test","chart": 
+            {"data": 
+                [
+                    {
+                        "dataPoints": 
+                        [
+                            {
+                                "label": "banana",
+                                "y": 18
+                            }
+                        ],
+                        "type": "line"
+                    }
+                ]
+            }
+        }';
+        $jsonArr = json_decode($json, true);
+        $chart = new Chart($json);
+        $this->assertEquals(
+            count($jsonArr['chart']['data']), 
+            $chart->chart->getData()->count()
+        );
+
+        $this->assertInstanceOf('Helfull\CanvasJS\Chart\ChartPropertie', $chart->chart);
+
+    }
+
 }
