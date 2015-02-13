@@ -14,7 +14,7 @@ class Chart extends Collection {
 		$opt = $this->convertOptions($opt);
 
 		$options = $opt;
-		$options['chart'] = new ChartPropertie((isset($opt['chart']) ? :[]));
+		$options['chart'] = new ChartPropertie((isset($options['chart']) ? $options['chart'] :[]));
 		parent::__construct($options);
 		$this->resolveID($opt);
 	}
