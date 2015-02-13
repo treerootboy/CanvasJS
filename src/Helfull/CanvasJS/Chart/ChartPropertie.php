@@ -27,7 +27,7 @@ class ChartPropertie extends Collection {
 	}
 
 	public function getData() {
-		return $this->get('data') ?: [];
+		return $this->get('data') ?: new Collection;
 	}
 
 	public function setData($data) {
