@@ -11,10 +11,23 @@ class Chart extends Collection {
 
 	public function __construct($opt = []) {
 
+		$opt = $this->convertOptions($opt);
+
 		$options = $opt;
 		$options['chart'] = new ChartPropertie((isset($opt['chart']) ? :[]));
 		parent::__construct($options);
 		$this->resolveID($opt);
+	}
+
+	protected function convertOptions($opt) {
+		if(is_string($opt)) {
+			return $this->convertOptionsFromString($opt);
+		}
+		return $opt;
+	}
+
+	protected function convertOptionsFromString($opt) {
+		return json_decode($opt, true);
 	}
 
 	public function setPropertie($key, $val) {
