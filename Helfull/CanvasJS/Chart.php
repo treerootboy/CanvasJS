@@ -3,27 +3,25 @@
 namespace Helfull\CanvasJS;
 
 use Helfull\CanvasJS\Chart\ChartData;
+use Helfull\CanvasJS\Chart\ChartPropertie;
 use Illuminate\Support\Collection;
 use View;
 
 class Chart extends Collection {
 
 	public function __construct($opt = []) {
-		$options['chart'] = $opt;
+		$options['chart'] = new ChartPropertie($opt);
 		parent::__construct($options);
 		$this->resolveID();
 	}
 
+	public function getPropertie($key) {
+		return $this->get('chart')->get($key);
+	}
+
 	public function addData(ChartData $chartData) {
-		return $this->getData()->push($chartData);
-	}
-
-	public function getData() {
-		return $this->get('data') ?: [];
-	}
-
-	public function setData($data) {
-		$this->put('data', $data);
+		$this->getPropertie('data')->push($chartData);
+		return $this;
 	}
 
 	public function getID() {
@@ -50,12 +48,6 @@ class Chart extends Collection {
 
 	private function generateID() {
 		return uniqid("Chart");
-	}
-
-	public function toArray() {
-		$arr['id'] = $this->id;
-		$arr['chart'] = parent::toArray();
-		return $arr;
 	}
 
 	public function toString() {
