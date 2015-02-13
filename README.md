@@ -9,6 +9,11 @@
 Maintained and developed by Helfull
 This package is a helper library for laravel to easyly create [canvasjs charts](http://canvasjs.com).
 
+## Dependencies
+
+* PHP >= 5.4
+* [canvasjs library](http://canvasjs.com)
+
 ## Installation
 
 add require:
@@ -20,11 +25,15 @@ add require:
 run `composer update` or `composer install`  
   
 add to your `config/app.php`
-
 ``` php
     'Helfull\CanvasJS\Laravel\CanvasJSServiceProvider',
+    'Illuminate\Html\HtmlServiceProvider',
 ```
 
+add to your `config/app.php ['alias']`  
+``` php
+    'HTML'=> 'Illuminate\Html\HtmlFacade'
+```
 
 ## Usage
 
@@ -47,6 +56,11 @@ add to your `config/app.php`
 In your view you just do
 ``` php
     {{ $chart->render() }}
+```
+
+or with Blade  
+```
+    @chart($chart)
 ```
 
 ## Documentation
