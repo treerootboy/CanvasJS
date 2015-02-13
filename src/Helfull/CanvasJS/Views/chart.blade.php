@@ -2,7 +2,7 @@
 	{!! dump($chart) !!}
 @endif
 
-<div id="{!!$chart->getID()!!}" {!! HTML::attributes($chart->getAttributes()) !!}></div>
+<div id="{!!$chart->getID()!!}" {!! \HTML::attributes($chart->getAttributesArray()) !!}></div>
 <script type="text/javascript">
 	window.onload = function () {
 		var {!!$chart->getID()!!} = new CanvasJS.Chart("{!!$chart->getID()!!}",{!!$chart->getChart()!!});

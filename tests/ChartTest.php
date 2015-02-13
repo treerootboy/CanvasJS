@@ -30,4 +30,19 @@ class ChartTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('Helfull\CanvasJS\Chart\ChartPropertie', $chart->chart);
     }
 
+    function testShouldAddAttributes() {
+        $attributes = [
+            "style"=>"height:300",
+            "class"=>"chart"
+        ];
+        $chart = new Chart;
+        $chart->putAttribute('style',$attributes['style']);
+        $this->assertEquals($attributes['style'], $chart->getAttribute('style'));
+
+        $chart = new Chart;
+        $chart->putAttributes($attributes);
+        $this->assertEquals($attributes['style'], $chart->getAttribute('style'));
+        $this->assertEquals($attributes['class'], $chart->getAttribute('class'));
+    }
+
 }

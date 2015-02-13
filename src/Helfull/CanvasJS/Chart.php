@@ -17,13 +17,21 @@ class Chart extends Collection {
 		$this->resolveID($opt);
 	}
 
+	public function setPropertie($key, $val) {
+		$this->get('chart')->put($key, $val);
+		return $this->getPropertie($key);
+	}
+
 	public function getPropertie($key) {
 		return $this->get('chart')->get($key);
 	}
 
 	public function addData(ChartData $chartData) {
-		dd($this);
-		$this->getPropertie('data')->push($chartData);
+		$data = $this->getPropertie('data');
+		if(is_null($data)) {
+			$data = $this->setPropertie('data', new Collection);
+		}
+		$data->push($chartData);
 		return $this;
 	}
 
@@ -31,12 +39,29 @@ class Chart extends Collection {
 		return $this->get('id');
 	}
 
-	public function putAttribute(array $att) {
-		return $this->getAttributes()->push($att);
+	public function putAttribute($key, $att) {
+		return $this->getAttributes()->put($key, $att);
+	}
+
+	public function getAttribute($key) {
+		return $this->getAttributes()->get($key);
+	}
+
+	public function putAttributes(array $atts) {
+		foreach($atts as $key=>$att) {
+			$this->putAttribute($key,$att);
+		}
 	}
 
 	public function getAttributes() {
+		if(!$this->has('attributes')) {
+			$this->put('attributes', new Collection);
+		}
 		return $this->get('attributes');
+	}
+
+	public function getAttributesArray() {
+		return $this->getAttributes()->toArray();
 	}
 
 	public function getChart() {
