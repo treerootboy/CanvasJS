@@ -49,23 +49,7 @@ class ChartTest extends PHPUnit_Framework_TestCase {
 	}
 
 	function testShouldSupportJSON() {
-		$json = '
-        {"id": "test","chart":
-            {"data":
-                [
-                    {
-                        "dataPoints":
-                        [
-                            {
-                                "label": "banana",
-                                "y": 18
-                            }
-                        ],
-                        "type": "line"
-                    }
-                ]
-            }
-        }';
+		$json = '{"id": "test","chart":{"data":[{"dataPoints":[{"label": "banana","y": 18}],"type": "line"}]}}';
 		$jsonArr = json_decode($json, true);
 		$chart = new Chart($json);
 		$this->assertEquals(
