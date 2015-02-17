@@ -16,9 +16,6 @@ class CanvasJSServiceProvider extends ServiceProvider {
 		//$this->registerRoutes();
 	}
 
-	public function boot() {
-	}
-
 	protected function extendBlade() {
 		$this->extendBladeChart();
 	}
