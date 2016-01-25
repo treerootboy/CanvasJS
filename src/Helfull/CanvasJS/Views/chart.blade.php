@@ -1,4 +1,5 @@
 <div id="{!!$chart->getID()!!}"></div>
+
 <script type="text/javascript">
 	window.addEventListener('DOMContentLoaded', function(){
 		var scripts = document.scripts;
