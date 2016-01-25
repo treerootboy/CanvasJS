@@ -12,6 +12,7 @@ This package is a helper library for laravel to easyly create [canvasjs charts](
 ## Dependencies
 
 * PHP >= 5.4
+* Laravel >= 5.0
 * [canvasjs library](http://canvasjs.com)
 
 ## Installation
@@ -35,7 +36,7 @@ run `composer update` or `composer install`
   
 add to your `config/app.php ['providers']`
 ``` php
-    'Helfull\CanvasJS\Laravel\CanvasJSServiceProvider'
+    Helfull\CanvasJS\Laravel\CanvasJSServiceProvider::class
 ```
 
 ## Usage
