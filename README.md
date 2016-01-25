@@ -26,13 +26,7 @@ run `composer update` or `composer install`
   
 add to your `config/app.php ['providers']`
 ``` php
-    'Helfull\CanvasJS\Laravel\CanvasJSServiceProvider',
-    'Illuminate\Html\HtmlServiceProvider',
-```
-
-add to your `config/app.php ['alias']`  
-``` php
-    'HTML'=> 'Illuminate\Html\HtmlFacade'
+    'Helfull\CanvasJS\Laravel\CanvasJSServiceProvider'
 ```
 
 ## Usage
@@ -56,11 +50,6 @@ add to your `config/app.php ['alias']`
 In your view you just do
 ``` php
     {{ $chart->render() }}
-```
-
-or with Blade  
-```
-    @chart($chart)
 ```
 
 ## Documentation
