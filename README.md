@@ -19,7 +19,6 @@ This package is a helper library for laravel to easyly create [canvasjs charts](
 modify composer.json:
 
 ``` php
-    ...
     "repositories": [
         {
             "url": "https://github.com/treerootboy/CanvasJS.git",
