@@ -36,7 +36,7 @@ run `composer update` or `composer install`
   
 add to your `config/app.php ['providers']`
 ``` php
-    Helfull\CanvasJS\Laravel\CanvasJSServiceProvider::class
+    Helfull\CanvasJS\Laravel\Provider\CanvasJSServiceProvider::class
 ```
 
 ## Usage
