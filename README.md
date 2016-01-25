@@ -16,10 +16,20 @@ This package is a helper library for laravel to easyly create [canvasjs charts](
 
 ## Installation
 
-add require:
+modify composer.json:
 
 ``` php
-    'helfull/canvasjs': 'dev-master'
+    ...
+    "repositories": [
+        {
+            "url": "https://github.com/treerootboy/CanvasJS.git",
+            "type": "git"
+        }
+    ],
+    "require": {
+        ...
+        'helfull/canvasjs': 'dev-master'
+    }
 ```  
 
 run `composer update` or `composer install`  
