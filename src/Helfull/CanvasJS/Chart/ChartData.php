@@ -18,6 +18,12 @@ class ChartData extends Collection {
 		}
 	}
 
+	public function setName($chartName) {
+		$this->put('name', $chartName);
+		$this->put('showInLegend', is_string($chartName));
+		return $this;
+	}
+
 	public function setType($chartType) {
 		$this->put('type', $chartType);
 		return $this;
